@@ -22,4 +22,4 @@ The methods used to answer them:
 -> formulation of the Regression model (models with one variables, models with many variables, elimination of the multicollinearity,
 model comparison, model validation and data transformations)
 
-4) Summary and conclusions
+4) Summary and conclusions.
