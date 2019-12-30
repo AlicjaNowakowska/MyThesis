@@ -1,8 +1,8 @@
 # This code aims to find the best regression model for the infection potential of the indvidual
 # on the basis of the variables such as the centrality measures and number of contacts of the node.
 # The multicollinearity problem for the model variables is identified and eliminated according
-# to the schema presented in the Thesis. The step function, data transformations and the 
-# model validation is used and done.
+# to the schema presented in the thesis. The step function, data transformations and the 
+# model validation are used and done.
 
 
 
@@ -82,7 +82,7 @@ plot(X,Y,col=443,pch = 19, main = "Regression model",
      xlab = "k6", ylab = "Chance",)
 lines(X,Y_prim,col='red',lwd=2)
 
-####################### Model z transformacj¹ dla k6
+####################### Model z transformacjÂ¹ dla k6
 
 #pierwiastek <- zdecydowanie gorzej
 Y_transform=sqrt(Y)
@@ -90,7 +90,7 @@ m3=lm(Y_transform~X)
 par(mfrow=c(2,2))
 plot(m3) 
 
-#pierwiastek na oba -> ca³kiem nieŸle na pewno duuu¿o lepiej 
+#pierwiastek na oba -> caÂ³kiem nieÅ¸le na pewno duuuÂ¿o lepiej 
 X_transform=sqrt(X)
 m4=lm(Y_transform~X_transform)
 par(mfrow=c(2,2))
@@ -107,7 +107,7 @@ lines(X_transform,Y_tr_prim,col='red',lwd=2)
 
 ################## Modele wielu zmiennych #################################
 
-#ten sposób eliminacji zapewnia brak korelacji i wszytskie wspolczynniki sa dodatnie
+#ten sposÃ³b eliminacji zapewnia brak korelacji i wszytskie wspolczynniki sa dodatnie
 #co jest intuicyjnie poprawne
 
 ################### Te co maja w sobie kontakty ############################
@@ -133,8 +133,8 @@ model_con_inf=lm(chance~k3+k6+k9+k_end+inf+cluster+close+between,data=data)
 step(model_con_inf)
 m_inf=lm(chance ~ k3 + k6 + k9 + inf + cluster + between,data=data) #AIC=-497.75, R^2= 0.8868, znaczace (1 prawie nie)
  
-##################### Te co maja w sobie harmonic zamiast kontaktów #############
-# jak harmonic to nei moge kontaktów ani closeness
+##################### Te co maja w sobie harmonic zamiast kontaktÃ³w #############
+# jak harmonic to nei moge kontaktÃ³w ani closeness
 
 m_h_eigen=lm(chance~harmonic+eigen+cluster+between,data=data)
 step(m_h_eigen)
@@ -154,14 +154,14 @@ m_h_inf_opt=lm(formula = chance ~ harmonic + inf + cluster, data = data) #AIC=-4
 
 ########## WNIOSEK :  TE Z HARMONIC ZNACZACO GORSZE AIC I R^2 WIEC WYBIERAM TE Z KONTAKTAMI
 
-######### BIORÊ TEN MODEL Z KONTAKTÓW KTÓRY MA NAJWIÊKSZE AIC I R^2 TO JEST TEN Z RANDOM
+######### BIORÃŠ TEN MODEL Z KONTAKTÃ“W KTÃ“RY MA NAJWIÃŠKSZE AIC I R^2 TO JEST TEN Z RANDOM
 
 summary(m_walk) #niestety jeden nie jest super znaczacy przy betweeness, ale nie ma problemu korelacji
- # dobry F-test p-value na pewniej lepiej opisuje ni¿ zwyk³a œrednia z tych wartoœci
+ # dobry F-test p-value na pewniej lepiej opisuje niÂ¿ zwykÂ³a Å“rednia z tych wartoÅ“ci
 
 par(mfrow=c(2,2))
 
-plot(m_walk) # NIE CHCE SPELNIAC ZA BARDZO ZA£O¯EÑ MODELU
+plot(m_walk) # NIE CHCE SPELNIAC ZA BARDZO ZAÂ£OÂ¯EÃ‘ MODELU
 
 ########### NO TO MOZE JAKAS TRANSFORMACJA? PROBUJE TO SAMO CO WCZESNIEJ Z TYM PIERWIASTKIEM
 
@@ -184,7 +184,7 @@ step(m_walk2)
 
 
 
-#no lepiej spe³nia ale sza³u nie ma, trochê ta normalnoœæ taka krzywa
+#no lepiej speÂ³nia ale szaÂ³u nie ma, trochÃª ta normalnoÅ“Ã¦ taka krzywa
 
 m_walk_no_between=lm(sqrt(chance) ~ sqrt(k3) + sqrt(k6) + sqrt(k9) + sqrt(walk) + 
     sqrt(cluster),data=data)
