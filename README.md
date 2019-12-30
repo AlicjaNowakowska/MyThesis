@@ -14,9 +14,12 @@ What factors influence on the disease dynamics?
 The methods used to answer them:
 
 -> histograms of the distribution
+
 -> visulization of the network and analysis of its characteristics
+
 -> analysis of the individual node characteristics (centrality measures, number of contacts)
+
 -> formulation of the Regression model (models with one variables, models with many variables, elimination of the multicollinearity,
 model comparison, model validation and data transformations)
 
-4) Summary
+4) Summary and conclusions
