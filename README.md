@@ -2,7 +2,7 @@
 This project aims to investigate the disease diffusion process. It consists of three parts: 
 -> Data set of the contacts between people that is used for the investigation and proceeds from the SocioPatterns website.
 -> Thesis that describes all work that was done.
--> The code files (every file is assigned to the chpater of the thesis).
+-> The code files (every file is assigned to the chapter of the thesis).
 
 The steps of the project:
 1) Creation of the network on the basis of the data set.
