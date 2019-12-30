@@ -15,6 +15,8 @@ The methods used to answer them:
 
 -> histograms of the distribution
 
+-> contact structure randomization
+
 -> visulization of the network and analysis of its characteristics
 
 -> analysis of the individual node characteristics (centrality measures, number of contacts)
